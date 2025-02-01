@@ -1,0 +1,216 @@
+:root {
+    --color-primary-tomato: hsl(4, 100%, 67%);
+
+    --color-dark-slate-grey: hsl(234, 29%, 20%);
+    --color-charcoal-grey: hsl(235, 18%, 26%);
+    --color-grey: hsl(231, 7%, 60%);
+    --color-white: hsl(0, 0%, 100%);
+
+    --font-weight-400: 400;
+    --font-weight-700: 700;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    height: 100vh;
+}
+.hero {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.container {
+    padding: 2rem 1.5rem;
+}
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+p {
+    margin-bottom: 1.5rem;
+}
+ul {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+ul li {
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 1rem;
+}
+ul li:before {
+    content: url("assets/images/icon-list.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.email-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+form label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-700);
+    margin-bottom: 0.5rem;
+}
+form input {
+    width: 100%;
+    padding: 1rem;
+    color: var(--color-grey);
+    border-radius: 8px;
+    border: 1px solid var(--color-grey);
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    outline: none;
+}
+form input:focus {
+    border: 1px solid var(--color-dark-slate-grey);
+}
+.email-error-message {
+    color: var(--color-primary-tomato);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-700);
+}
+button {
+    width: 100%;
+    background-color: var(--color-dark-slate-grey);
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-image 0.3s ease-in-out;
+}
+button:hover {
+    background-image: linear-gradient(
+        to right,
+        var(--color-primary-tomato),
+        orange
+    );
+    box-shadow: 0 5px 10px 5px rgba(255, 98, 87, 0.2);
+}
+
+/* Success Page */
+.success-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.success-contents {
+    margin-top: 5rem;
+}
+.success-container img {
+    margin-bottom: 1.5rem;
+}
+.success-container p {
+    line-height: 1.5rem;
+}
+.success-email {
+    font-weight: var(--font-weight-700);
+}
+.dismiss-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .desktop-bg {
+        background-color: var(--color-charcoal-grey);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .card {
+        background-color: var(--color-white);
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 20px;
+        width: 60%;
+        max-width: 1200px;
+        max-height: 800px;
+        overflow: hidden;
+    }
+    .hero-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+    .hero {
+        content: url("assets/images/illustration-sign-up-desktop.svg");
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3.5rem;
+        flex-grow: auto;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Success Page */
+    .success-container {
+        background-color: var(--color-white);
+        display: flex;
+        border-radius: 40px;
+        max-width: 40%;
+        height: auto;
+    }
+    .success-contents {
+        margin-top: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+    .success-contents h1 {
+        font-size: 2.2rem;
+    }
+    .success-contents p {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .success-contents h1 {
+        font-size: 3.8rem;
+    }
+    .success-contents p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+}
